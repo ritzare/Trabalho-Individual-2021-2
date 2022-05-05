@@ -12,7 +12,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env: working-directory: ./aplicacao
+    env: 
+      working-directory: ./aplicacao
 
     steps:
     - uses: actions/checkout@v3
