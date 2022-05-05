@@ -12,7 +12,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env: working-directory: ./aplicacao
+
     steps:
     - uses: actions/checkout@v3
     - name: Build Docker image
+      working-directory: ${{env.working-directory}}
       run: docker-compose up -d
