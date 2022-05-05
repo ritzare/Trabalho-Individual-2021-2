@@ -20,3 +20,7 @@ jobs:
     - name: Build Docker image
       working-directory: ${{env.working-directory}}
       run: docker-compose up -d
+    - name: Rails test
+      working-directory: ${{env.working-directory}}
+      run: docker-compose run app rails db:reset
+      run: docker-compose run app rspec
