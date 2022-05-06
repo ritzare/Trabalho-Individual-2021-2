@@ -31,7 +31,7 @@ jobs:
 
 
   Deploy:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main --force' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -42,3 +42,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "book-gecs" #Must be unique in Heroku
           heroku_email: "joaovictor.23fza@gmail.com"
+          usedocker: true
