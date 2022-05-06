@@ -31,11 +31,11 @@ jobs:
 
 
   Deploy:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main --force' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@master
       - name: Deploy To Heroku
         uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
         with:
