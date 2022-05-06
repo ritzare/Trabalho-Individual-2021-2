@@ -27,6 +27,5 @@ jobs:
           docker-compose run app rspec
     - name: rubocop lint
       working-directory: ${{env.working-directory}}
-      run: docker-compose run app bash -c "bundle install; rubocop --lint"
-           docker-compose run app bash -c "bundle install; rubocop --lint"
+      run: docker-compose run app bash -c "gem install rubocop; rubocop --lint"
 
